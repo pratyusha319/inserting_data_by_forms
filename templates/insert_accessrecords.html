@@ -13,7 +13,12 @@
              {% csrf_token %}
           
             <label for="na">name</label>
-            <input type="text" name="na" id="na"><br>
+            <select name="na" id="na">
+                {% for wo in webpages %}
+                <option value="{{wo}}">{{wo.name}}</option>
+                {% endfor%}
+            </select><br>
+           
             <label for="au">author</label>
             <input type="text" name="au" id="au"><br>
             <label for="da">date</label>

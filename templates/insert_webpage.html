@@ -11,8 +11,13 @@
         <h1>INSERTION OF WEBPAGES</h1>
         <form method="POST">
              {% csrf_token %}
-            <label for="tn">Topic_name</label>
-            <input type="text" name="tn" id="tn"><br>
+             <label for="tn">Topic_name</label>
+             <select name="tn" id="tn">
+             {% for to in topics %}
+             <option value="{{to}}">{{to.topic_name}}</option>
+             {% endfor %}
+             </select>
+            <br>
             <label for="na">name</label>
             <input type="text" name="na" id="na"><br>
             <label for="ur">URL</label>
